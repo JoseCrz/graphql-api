@@ -12,7 +12,6 @@ const PORT = config.port
 const app = express()
 
 const typeDefs = readFileSync(join(__dirname, 'lib', 'schema.graphql'), 'utf-8')
-
 const schema = makeExecutableSchema({typeDefs, resolvers})
 
 app.use('/api', gqlMiddleware({
