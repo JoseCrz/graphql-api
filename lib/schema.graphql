@@ -30,14 +30,30 @@ input CourseInput {
   topic: String
 }
 
+input CourseEditInput {
+  title: String
+  teacher: String
+  description: String
+  topic: String
+}
+
 input StudentInput {
   name: String!
   email: String!
 }
 
+input StudentEditInput {
+  name: String
+  email: String
+}
+
 type Mutation {
-  "Creates a course"
+  # "Creates a Course"
   createCourse(input: CourseInput!): Course,
-  "Creates a Student"
+  # "Edits a Course"
+  editCourse(input: CourseEditInput!): Course,
+  # "Creates a Student"
   createStudent(input: StudentInput!): Student,
+  # "Edits a Student"
+  editStudent(input: StudentEditInput!): Student,
 }
