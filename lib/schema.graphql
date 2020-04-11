@@ -48,12 +48,12 @@ input StudentEditInput {
 }
 
 type Mutation {
-  # "Creates a Course"
+  # Creates a Course
   createCourse(input: CourseInput!): Course,
-  # "Edits a Course"
-  editCourse(input: CourseEditInput!): Course,
-  # "Creates a Student"
+  # Edits a Course
+  editCourse(_id: ID!, input: CourseEditInput!): Course,
+  # Creates a Student
   createStudent(input: StudentInput!): Student,
-  # "Edits a Student"
-  editStudent(input: StudentEditInput!): Student,
+  # Edits a Student
+  editStudent(_id: ID!, input: StudentEditInput!): Student,
 }
