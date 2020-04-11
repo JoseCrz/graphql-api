@@ -5,6 +5,9 @@ const gqlMiddleware = require('express-graphql')
 const { readFileSync } = require('fs')
 const { join } = require('path')
 const resolvers = require('./lib/resolvers')
+const db = require('./lib/db')
+
+db.connect()
 
 const config = require('./config')
 const PORT = config.port
