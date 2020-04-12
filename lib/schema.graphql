@@ -1,3 +1,5 @@
+union GlobalSearch = Course | Student | Monitor
+
 enum Level {
   easy
   intermediate
@@ -39,14 +41,16 @@ type Deleted {
 }
 
 type Query {
-  "Returns all courses"
+  # Returns all courses
   getCourses: [Course],
-  "Returns one course"
+  # Returns one course
   getCourse(_id: ID!): Course,
-  "Returns all Students"
+  # Returns all Students
   getPeople: [Person],
-  "Returns one Student"
+  # Returns one Student
   getPerson(_id: ID!): Person
+  # Executes a global search
+  searchItems(keyword: String!): [GlobalSearch]
 }
 
 input CourseInput {
